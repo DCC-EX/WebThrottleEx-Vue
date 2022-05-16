@@ -1,8 +1,9 @@
 import * as VueRouter from 'vue-router'
 const routes = [
+    { path: '/', redirect: '/throttle' },
     {
-        path: "/",
-        name: "home",
+        path: "/throttle",
+        name: "throttle",
         component: () => import("./views/Throttle.vue" /* webpackChunkName: 'home.chunk' */),
     },
     {

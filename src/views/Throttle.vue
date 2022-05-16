@@ -1,5 +1,5 @@
 <template>
-    <section id="throttle-window" class="section">
+    <div id="throttle-window" class="section">
         <div Class="details-panel" id="details-panel">
             <div class="row">
                 <div class="column-5">
@@ -204,7 +204,7 @@
             </div>
             <div class="log-msg" id="log-box"></div>
         </div>
-    </section>
+    </div>
 </template>
 <style scoped>
 
