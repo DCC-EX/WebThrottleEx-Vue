@@ -207,25 +207,6 @@
     </section>
 </template>
 <style scoped>
-    .throttle-heading {
-        text-align: center;
-        padding-top: 5px;
-        font-size: 14px;
-        display: inline-block;
-    }
-    .throttle-heading .wt-logo {
-        height: 48px;
-        width: 142px;
-        background: url(../images/WebThrottle.png);
-        display: inline-block;
-        background-size: 100%;
-        box-shadow: 0 0 3px #989898;
-        border-radius: 6px;
-    }
-    .throttle-heading p {
-        font-size: 12px;
-        margin: 5px;
-    }
 
     #throttle-window {
         box-shadow: 0 0 5px 0px #777777;
