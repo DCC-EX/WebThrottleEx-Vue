@@ -1,11 +1,9 @@
 import { defineStore } from "pinia";
 
-export const fucntionMapsStore = defineStore('functionMapsStore', {
-    state:() => {
-        return {
-        functionMaps: [
+interface State {}
 
-        ]
-    }
-    }
-})
+export const functionMapsStore = defineStore("functionMaps", {
+    state: (): State => {
+        return {};
+    },
+});

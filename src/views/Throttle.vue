@@ -207,11 +207,10 @@
     </div>
 </template>
 <style scoped>
-
-    #throttle-window {
+    /* #throttle-window {
         box-shadow: 0 0 5px 0px #777777;
         overflow: auto;
-        /* height: auto; */
+        /* height: auto; 
         padding-bottom: 1px;
     }
 
@@ -730,7 +729,7 @@
         float: left;
         margin: 11px;
     }
-    /* The Close Button */
+    /* The Close Button 
     .close {
         color: #aaaaaa;
         float: right;
@@ -803,7 +802,7 @@
         outline: none;
     }
 
-    /* Style The Dropdown Button */
+    /* Style The Dropdown Button 
     .dropbtn {
         background-color: #00a3b9;
         color: white;
@@ -814,13 +813,13 @@
         vertical-align: middle;
         border-radius: 4px;
     }
-    /* The container <div> - needed to position the dropdown content */
+    /* The container <div> - needed to position the dropdown content 
     .dropdown {
         position: relative;
         display: inline-block;
     }
 
-    /* Dropdown Content (Hidden by Default) */
+    /* Dropdown Content (Hidden by Default) 
     .dropdown-content {
         display: none;
         position: absolute;
@@ -831,7 +830,7 @@
         right: 0;
     }
 
-    /* Links inside the dropdown */
+    /* Links inside the dropdown 
     .dropdown-content a {
         color: black;
         padding: 12px 16px;
@@ -842,25 +841,25 @@
     .dropdown-content .hr {
         border-bottom: 1px solid #dddddd;
     }
-    /* Change color of dropdown links on hover */
+    /* Change color of dropdown links on hover 
     .dropdown-content a:hover {
         background-color: #f1f1f1;
     }
 
-    /* Show the dropdown menu on hover */
+    /* Show the dropdown menu on hover 
     .dropdown:hover .dropdown-content {
         display: block;
     }
 
-    /* Change the background color of the dropdown button when the dropdown content is shown */
+    /* Change the background color of the dropdown button when the dropdown content is shown 
     .dropdown:hover .dropbtn {
         background-color: #00899a;
     }
-    /* Circular Slider Code */
+    /* Circular Slider Code 
     .circular-throttle {
         margin: 0 5px;
     }
-    /* Vertical Slider Code */
+    /* Vertical Slider Code 
     .vertical-throttle {
         width: 64px;
         position: relative;
@@ -903,7 +902,7 @@
         box-shadow: 0 0 3px #8c8c8c inset;
     }
 
-    /* support: IE8 - See #6727 */
+    /* support: IE8 - See #6727 
     .ui-slider.ui-state-disabled .ui-slider-handle,
     .ui-slider.ui-state-disabled .ui-slider-range {
         filter: inherit;
@@ -999,7 +998,7 @@
         top: 0;
     }
 
-    /* Add Loco Styles */
+    /* Add Loco Styles 
 
     .loco-list-container {
         position: relative;
@@ -1058,7 +1057,7 @@
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
     border-bottom: 12px solid #ffffff;
-} */
+} 
     .add-loco-form {
         width: 380px;
         display: none;
@@ -1239,7 +1238,7 @@
     .maps-content span.pill.green {
         background: #00643a;
     }
-    /* Common Styles*/
+    /* Common Styles
     .width100 {
         width: 100%;
     }
@@ -1248,7 +1247,7 @@
         justify-content: center;
         align-items: center;
     }
-    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other 
     @media screen and (max-width: 1200px) {
         .column-4.mobile-100,
         .column-6.mobile-100,
@@ -1270,6 +1269,6 @@
         .flex-center {
             display: block;
         }
-    }
+    } */
 </style>
 <script setup lang="ts"></script>

@@ -1,7 +1,59 @@
-<script setup lang="ts"></script>
-
 <template>
-    <div>
+    <v-app>
+        <v-app-bar>
+            <template #prepend>
+                <v-app-bar-nav-icon icon="mdi:menu" @click.stop="toggleNav()" />
+            </template>
+
+            <v-app-bar-title>{{ getTitle }}</v-app-bar-title>
+
+            <template #append>
+                <v-slider v-model="powerModel"></v-slider>
+            </template>
+        </v-app-bar>
+        <v-navigation-drawer v-model="showNavBar">
+            <v-list>
+                <v-list-item
+                    v-for="(item, i) in getNavList"
+                    :key="i"
+                    active-color="primary"
+                    :to="item.to"
+                >
+                    <template v-slot:prepend>
+                        <v-icon :icon="item.icon"></v-icon>
+                    </template>
+                    <v-list-item-title v-text="item.title"></v-list-item-title>
+                </v-list-item>
+            </v-list>
+        </v-navigation-drawer>
+        <v-main>
+            <router-view></router-view>
+        </v-main>
+        <v-footer height="25">
+            <v-row no-gutters>
+                <v-col cols="2">
+                    <v-switch
+                        v-model="themeModel"
+                        hide-details
+                        true-value="light"
+                        false-value="dark"
+                        ><v-spacer></v-spacer>
+                        <template v-slot:label>
+                            <v-icon
+                                :icon="
+                                    themeModel == `dark`
+                                        ? `mdi:moon-waning-crescent`
+                                        : `mdi:weather-sunny`
+                                "
+                            ></v-icon>
+                        </template>
+                    </v-switch>
+                </v-col>
+                <v-col> {{ new Date().getFullYear() }} — <strong>DCC EX Team</strong> </v-col>
+            </v-row>
+        </v-footer>
+    </v-app>
+    <!-- <div>
         <nav class="menu" id="side-menu" tabindex="0">
             <header class="avatar">
                 <button class="nav-btn in" id="nav-close">&times;</button>
@@ -26,9 +78,9 @@
                         <a href="http://www.dcc-ex.com" target="_blank" rel="noopener noreferrer"
                             ><div class="wt-logo"></div
                         ></a>
-                        <!--img src="images/WebThrottle.png" /> -->
-                        <!-- <p>Version 1.2.0</p> -->
-                    </div>
+                        img src="images/WebThrottle.png" /> -->
+    <!-- <p>Version 1.2.0</p> -->
+    <!-- </div>
                 </div>
                 <div class="column-2">
                     <button class="btn-expand" id="fs-toggle" state="ws" title="Fullscreen">
@@ -49,12 +101,28 @@
                 </div>
             </div>
         </div>
-        <router-view></router-view>
-    </div>
+        
+    </div> -->
 </template>
+<script lang="ts" setup>
+    import { useTheme } from "vuetify";
+    import { computed, ref, watch } from "vue";
+    import { useGlobalStore } from "./store/global";
+    import { storeToRefs } from "pinia";
+
+    const theme = useTheme();
+    const globalStore = useGlobalStore();
+    const { getTitle, showNavBar, getNavList } = storeToRefs(globalStore);
+    const toggleNav = computed(() => globalStore.toggleNavBar);
+    const themeModel = ref("dark");
+
+    watch(themeModel, (newmodel, oldold) => {
+        theme.global.name.value = newmodel;
+    });
+</script>
 
 <style>
-    #app {
+    /* #app {
         font-family: Arial, Helvetica, sans-serif;
         margin: 0;
         height: 100vh;
@@ -108,9 +176,9 @@
     }
     .dcmd-clear {
         padding-left: 0;
-    }
-
+    }*/
     /* Clear floats */
+    /*
     .row:after {
         content: "";
         display: block;
@@ -220,5 +288,5 @@
     .throttle-heading p {
         font-size: 12px;
         margin: 5px;
-    }
+    } */
 </style>
